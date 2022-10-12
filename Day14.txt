@@ -1,88 +1,41 @@
-Topic:-  Java Datatypes
-ava has 8 primitive data types; char, boolean, byte, short, int, long, float, and double. For this exercise, we'll work with the primitives used to hold integer values (byte, short, int, and long):
+Topic:- Java End-Of-File
 
-A byte is an 8-bit signed integer.
-A short is a 16-bit signed integer.
-An int is a 32-bit signed integer.
-A long is a 64-bit signed integer.
-Given an input integer, you must determine which primitive data types are capable of properly storing that input.
+Problem:- The challenge here is to read n lines of input until you reach EOF, then number and print all n lines of content.
 
 Input Format
 
-The first line contains an integer, T , denoting the number of test cases.
-Each test case, T , is comprised of a single line with an integer,n, which can be arbitrarily large or small.
+Read some unknown n lines of input from stdin(System.in) until you reach EOF; each line of input contains a non-empty String.
 
 Output Format
 
-For each input variable n and appropriate primitive dataType , you must determine if the given primitives are capable of storing it. If yes, then print:
+For each line, print the line number, followed by a single space, and then the line content received as input.
 
-n can be fitted in:
-* dataType
-If there is more than one appropriate data type, print each one on its own line and order them by size.
-If the number cannot be stored in one of the four aforementioned primitives, print the line:
-n can't be fitted anywhere.
 Sample Input
 
-5
--150
-150000
-1500000000
-213333333333333333333333333333333333
--100000000000000
+Hello world
+I am a file
+Read me until end-of-file.
+
 Sample Output
 
--150 can be fitted in:
-* short
-* int
-* long
-150000 can be fitted in:
-* int
-* long
-1500000000 can be fitted in:
-* int
-* long
-213333333333333333333333333333333333 can't be fitted anywhere.
--100000000000000 can be fitted in:
-* long
+1 Hello world
+2 I am a file
+3 Read me until end-of-file.
+
 
 Solution:-
-
 import java.io.*;
 import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
 
-public class JavaDatatypes {
+public class Solution {
 
-    static String whoCanFitTheNumber(String numString)
-    {
-        String answer = "";
-        try{
-            long num = Long.parseLong(numString);
-            answer = numString + " can be fitted in:\n";
-            if((num<=Byte.MAX_VALUE) && (num>=Byte.MIN_VALUE)){
-                answer = answer.concat("* byte\n* short\n* int\n* long");
-            }else if((num <= Short.MAX_VALUE) && (num >= Short.MIN_VALUE)){
-                answer = answer.concat("* short\n* int\n* long");
-            }else if((num <= Integer.MAX_VALUE) && (num >= Integer.MIN_VALUE)){
-                    answer = answer.concat("* int\n* long");
-            }else{
-                    answer = answer.concat("* long");
-            }
-        }catch (NumberFormatException e){
-            answer = numString+" can't be fitted anywhere.";
-        }
-        return answer;
-    }
     public static void main(String[] args) {
-        
-            Scanner scanner = new Scanner(System.in);
-        int numTestCases = scanner.nextInt() ;
-        scanner.nextLine();
-        for(int i=0; i<numTestCases;i++){
-            String numString = scanner.nextLine();
-            System.out.println(whoCanFitTheNumber(numString));
+       Scanner sc = new Scanner(System.in);
+        int i=1;
+        while (sc.hasNext()) {
+            String s=sc.nextLine();
+            System.out.println(i + " " + s);
+            i++;
         }
     }
 }
