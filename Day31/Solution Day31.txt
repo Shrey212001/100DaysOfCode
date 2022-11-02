@@ -1,0 +1,73 @@
+
+Solution:-
+
+import java.util.*;
+
+public class Solution {
+
+    public static boolean canWin(int leap, int[] game) {
+        int index = 0;
+        ArrayList<Integer> added = new ArrayList<Integer>();
+        
+        
+        if(game[index+1] == 0)
+            added.add(index+1);
+        if(index-1>=0 && game[index-1] == 0)
+            added.add(index-1);
+        if(index+leap<game.length && game[index+leap] == 0)
+            added.add(index+leap);
+        if(leap >= game.length)
+            return true;
+
+        
+        int bufferLength = 0;
+        while(true)
+        {
+            int count = 0;
+            bufferLength = added.size();
+            while(count < added.size())
+            {
+                if((added.get(count) + leap > game.length - 1) || (added.get(count) + 1 > game.length-1))
+                    return true;
+                if(game[added.get(count) + 1] == 0)
+                {
+                    if(!added.contains(added.get(count) + 1))
+                        added.add(added.get(count) + 1);
+                }
+                if(added.get(count)-1>=0 && game[added.get(count) - 1] == 0)
+                {
+                    if(!added.contains(added.get(count) - 1))
+                        added.add(added.get(count) - 1);
+                }
+                if(game[added.get(count) + leap] == 0)
+                {
+                    if(!added.contains(added.get(count) + leap))
+                        added.add(added.get(count) + leap);
+                }
+
+                count ++;
+
+            }
+            if(bufferLength == added.size()) // meaning added didnt change in length so no new items were added
+                return false;
+        }
+
+    }
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int q = scan.nextInt();
+        while (q-- > 0) {
+            int n = scan.nextInt();
+            int leap = scan.nextInt();
+            
+            int[] game = new int[n];
+            for (int i = 0; i < n; i++) {
+                game[i] = scan.nextInt();
+            }
+
+            System.out.println( (canWin(leap, game)) ? "YES" : "NO" );
+        }
+        scan.close();
+    }
+}
