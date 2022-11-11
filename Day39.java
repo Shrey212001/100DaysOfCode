@@ -1,5 +1,5 @@
 /* 
-Topic:- Java Inheritance 1
+Topic:- Java Inheritance-1
 
 Link:- https://www.hackerrank.com/challenges/java-inheritance-1/problem?isFullScreen=true&h_r=next-challenge&h_v=zen
 
