@@ -3,7 +3,7 @@ Topic:- Java Inheritance II
 
 Link:- https://www.hackerrank.com/challenges/java-inheritance-2/problem?isFullScreen=true&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen
 
-Problem:-
+Problem:
 
 Write the following code in your editor below:
 A class named Arithmetic with a method named add that takes 2 integers as parameters and returns an integer denoting their sum.
