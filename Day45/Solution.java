@@ -14,6 +14,7 @@ class Checker implements Comparator<Player> {
   }
 }
 
+
 class Player{
     String name;
     int score;
