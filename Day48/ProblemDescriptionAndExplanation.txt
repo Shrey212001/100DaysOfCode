@@ -44,7 +44,6 @@ SET 1 4
 FLIP 2 2
 OR 2 1
 
-
 Sample Output
 
 0 0
