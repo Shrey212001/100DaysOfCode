@@ -1,7 +1,7 @@
 /*
 Topic:- Java interface
 
-Link:-
+Link:- https://www.hackerrank.com/challenges/java-interface/problem?isFullScreen=true
 
 Problem:-
 A Java interface can only contain method signatures and fields. The interface can be used to achieve polymorphism. In this problem, you will practice your knowledge on interfaces.
