@@ -1,5 +1,5 @@
 /*
-Topic:- Java Overriding
+Topic:- Java Method Overriding
 
 Link:- https://www.hackerrank.com/challenges/java-method-overriding/problem?isFullScreen=true
 
