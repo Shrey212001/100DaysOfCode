@@ -1,7 +1,7 @@
 /*
-Topic:-
+Topic:- Java Method Overriding 2 (Super Keyword)
 
-Link:-
+Link:- https://www.hackerrank.com/challenges/java-method-overriding-2-super-keyword/problem?isFullScreen=true
 
 Problem:-
 When a method in a subclass overrides a method in superclass, it is still possible to call the overridden method using super keyword. If you write super.func() to call the function func(), it will call the method that was defined in the superclass.
